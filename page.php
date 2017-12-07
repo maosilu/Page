@@ -3,6 +3,9 @@
 	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
 </head>
 <style>
+	div.page {
+		text-align: center;
+	}
 	div.page a{
 		border: #aaaadd 1px solid; 
 		text-decoration:none; 
