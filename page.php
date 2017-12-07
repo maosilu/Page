@@ -17,6 +17,12 @@
 		color: #fff;
 		font-weight: bold;
 	}
+	div.page span.disable{
+		border: #eee 1px solid;
+		padding: 2px 5px 2px 5px;
+		margin: 2px;
+		color: #ddd;
+	}
 </style>
 <body>
 <?php
@@ -71,8 +77,8 @@ if($page > 1){
 	$page_banner .= "<a href='".$_SERVER['PHP_SELF']."?page=1'>首页</a>";
 	$page_banner .= "<a href='".$_SERVER['PHP_SELF']."?page={$pre}'><上一页</a>";
 }else{
-	$page_banner .= "<span>首页</span>";
-	$page_banner .= "<span><上一页</span>";
+	$page_banner .= "<span class='disable'>首页</span>";
+	$page_banner .= "<span class='disable'><上一页</span>";
 }
 
 if($total_pages > $show_page){
@@ -109,8 +115,8 @@ if($page < $total_pages){
 	$page_banner .= "<a href='".$_SERVER['PHP_SELF']."?page={$next}'>下一页></a>";
 	$page_banner .= "<a href='".$_SERVER['PHP_SELF']."?page={$total_pages}'>尾页></a>";
 }else{
-	$page_banner .= "<span>下一页></span>";
-	$page_banner .= "<span>尾页</span>";
+	$page_banner .= "<span class='disable'>下一页></span>";
+	$page_banner .= "<span class='disable'>尾页</span>";
 }
 
 
