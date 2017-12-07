@@ -92,6 +92,11 @@ if($page < $total_pages){
 
 
 $page_banner .= "共{$total_pages}页，";
+$page_banner .= "<form action='".$_SERVER['PHP_SELF']."' method='get'>
+到第<input type='text' size='2' name='page'/>页，
+<input type='submit' value='确定'/>
+</form>";
+
 echo $page_banner;
 ?>
 </body>
