@@ -24,6 +24,8 @@ mysqli_set_charset($link, 'utf8');
 //获取分页数据
 $sql = "SELECT * FROM page LIMIT ".($page-1)*$pageSize.', '.$pageSize;
 $result = mysqli_query($link, $sql);
+
+echo "<div class='content'>";
 echo "<table border=1 cellspacing=0 width=40%>";
 echo "<tr><th>id</th>
 <th>name</th></tr>";
@@ -34,6 +36,7 @@ while($row = mysqli_fetch_assoc($result)){
 	echo "</tr>";
 }
 echo "</table>";
+echo "</div>";
 
 //获取数据总数
 $total_sql = "SELECT * FROM page";
@@ -47,7 +50,7 @@ mysqli_close($link);
 $start = 1; //初始化开始显示页码
 $end = $total_pages; //初始化结束显示页码
 
-$page_banner = '';
+$page_banner = "<div class='page'>";
 if($page > 1){
 	$page_banner .= "<a href='".$_SERVER['PHP_SELF']."?page=1'>首页</a>";
 	$page_banner .= "<a href='".$_SERVER['PHP_SELF']."?page={$pre}'><上一页</a>";
@@ -96,6 +99,7 @@ $page_banner .= "<form action='".$_SERVER['PHP_SELF']."' method='get'>
 到第<input type='text' size='2' name='page'/>页，
 <input type='submit' value='确定'/>
 </form>";
+$page_banner .= "</div>";
 
 echo $page_banner;
 ?>
