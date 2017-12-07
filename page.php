@@ -2,6 +2,22 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
 </head>
+<style>
+	div.page a{
+		border: #aaaadd 1px solid; 
+		text-decoration:none; 
+		padding: 2px 5px 2px 5px;
+		margin: 2px;
+	}
+	div.page span.current{
+		border: #000099 1px solid;
+		background-color: #000099;
+		padding: 4px 6px 4px 6px;
+		margin: 2px;
+		color: #fff;
+		font-weight: bold;
+	}
+</style>
 <body>
 <?php
 /** 1.传入页码*/
@@ -76,7 +92,11 @@ if($total_pages > $show_page){
 	}
 
 	for($i=$start; $i<=$end; $i++){
-		$page_banner .= "<a href='".$_SERVER['PHP_SELF']."?page={$i}'>{$i}</a>";
+		if($page == $i){
+			$page_banner .= "<span class='current'>{$i}</span>";
+		}else{
+			$page_banner .= "<a href='".$_SERVER['PHP_SELF']."?page={$i}'>{$i}</a>";
+		}
 	}
 
 	if($page+$pageoffset < $total_pages){
