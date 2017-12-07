@@ -48,7 +48,7 @@ $sql = "SELECT * FROM page LIMIT ".($page-1)*$pageSize.', '.$pageSize;
 $result = mysqli_query($link, $sql);
 
 echo "<div class='content'>";
-echo "<table border=1 cellspacing=0 width=40%>";
+echo "<table border=1 cellspacing=0 width=40% align='center'>";
 echo "<tr><th>id</th>
 <th>name</th></tr>";
 while($row = mysqli_fetch_assoc($result)){
