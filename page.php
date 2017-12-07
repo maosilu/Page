@@ -26,6 +26,9 @@
 		margin: 2px;
 		color: #ddd;
 	}
+	div.page form{
+		display: inline;
+	}
 </style>
 <body>
 <?php
